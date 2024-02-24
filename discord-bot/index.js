@@ -1,7 +1,7 @@
 // require the discord.js module
 const fs = require('fs');
 const Discord = require('discord.js');
-const { token_dev } = require('./config.json');
+const { token } = require('./config.json');
 const { REST } = require('@discordjs/rest');
 const { Routes, InteractionType } = require('discord-api-types/v9');
 
@@ -27,7 +27,7 @@ for (const file of commandFiles) {
     }
 }
 
-const rest = new REST({ version: '9' }).setToken(token_dev);
+const rest = new REST({ version: '9' }).setToken(token);
 
 (async () => {
 	try {
