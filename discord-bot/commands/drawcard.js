@@ -9,7 +9,7 @@ module.exports = {
         .setDMPermission(true),
 	async execute(interaction) {
         // Create a standard 52 card deck + 1 joker
-        const deck = new decks.StandardDeck({ jokers: 1 });
+        const deck = new decks.StandardDeck({ jokers: 2 });
         deck.shuffleAll();
 
         let cardChosen = deck.draw(1)[0];
