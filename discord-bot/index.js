@@ -96,7 +96,7 @@ client.on('interactionCreate', async interaction => {
 });
 
 client.on('messageCreate', async message => {
-    if (message.channel.id == '1214447527785529424' && message.author.bot == false) {
+    if (message.channel.id == '1327078977235325021' && message.author.bot == false) {
         let tweetButtons = new Discord.ActionRowBuilder();
         let memberData = await message.guild.members.fetch(message.author.id);
         let memberRoles = message.member.roles.cache.map(r => r.name);
@@ -110,19 +110,15 @@ client.on('messageCreate', async message => {
             .setAuthor({ name: circleName, iconURL: message.author.avatarURL({ extension: "png" }) })
             .setDescription(message.content);
 
-        let randomLikes = (_.random(200, 2_000_000)).toLocaleString()
-        let randomRetweets = (_.random(200, 2_000_000)).toLocaleString()
-        let randomComments = (_.random(200, 2_000_000)).toLocaleString()
-
         tweetButtons.addComponents(
             new Discord.ButtonBuilder()
-                .setCustomId('0').setLabel(`${randomLikes}`)
+                .setCustomId('0').setLabel(`0`)
                 .setStyle(Discord.ButtonStyle.Primary).setEmoji('⬆️'),
             new Discord.ButtonBuilder()
-                .setCustomId('1').setLabel(`${randomRetweets}`)
+                .setCustomId('1').setLabel(`0`)
                 .setStyle(Discord.ButtonStyle.Primary).setEmoji('🔁'),
             new Discord.ButtonBuilder()
-                .setCustomId('2').setLabel(`${randomComments}`)
+                .setCustomId('2').setLabel(`0`)
                 .setStyle(Discord.ButtonStyle.Primary).setEmoji('⬇️'),
         );
 
